@@ -33,6 +33,10 @@ Now if you want to use all above mentioned dependencies from system, you can ski
 ```sh
 git submodule update --init --recursive
 ```
+To update the dependencies you can type
+```sh
+git submodule update --remote --merge
+```
 
 ###### Step 3
 Build the library:
