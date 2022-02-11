@@ -36,7 +36,9 @@ void fillIndexAndTypeInUrlPath(
         urlPath << indexName << "/";
     }
     if (docTypeNotEmpty && docType.empty()) {
-        throw std::runtime_error("Argument docType can not be empty.");
+        // type can be empty on searches, actually it is deprecate by 
+        // elastic search, and adding it will not generate a valid result 
+        //throw std::runtime_error("Argument docType can not be empty.");
     } else if (!docType.empty()) {
         urlPath << docType << "/";
     }
