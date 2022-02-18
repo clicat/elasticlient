@@ -25,10 +25,16 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
   # using GCC
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fp-model=precise")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fp-model=precise -DINTEL")
 elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
   # using Visual Studio C++
 endif()
+if(CMAKE_CXX_COMPILER MATCHES "icpx")
+    # using new intel oneapi compiler, that is also Clang
+    add_definitions(-DINTEL)
+    add_compile_options(-fp-model=precise)
+endif()
+
 set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 macro(get_variable VAR_NAME VAR_TEXT DEFAULT_VALUE IS_OPTION)
