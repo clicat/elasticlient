@@ -3,7 +3,7 @@
 	url = https://github.com/clicat/jsoncpp
 [submodule "external/cpr"]
 	path = external/cpr
-	url = https://github.com/whoshuu/cpr
+	url = https://github.com/clicat/cpr
 [submodule "external/googletest"]
 	path = external/googletest
 	url = https://github.com/google/googletest
